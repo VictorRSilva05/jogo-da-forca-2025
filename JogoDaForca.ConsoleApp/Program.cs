@@ -4,7 +4,42 @@
     {
         static void Main(string[] args)
         {
-            string palavraEscolhida = "MELANCIA";
+            string[] palavras = {
+                "ABACATE",
+                "ABACAXI",
+                "ACEROLA",
+                "ACAI",
+                "ARACA",
+                "BACABA",
+                "BACURI",
+                "BANANA",
+                "CAJA",
+                "CAJU",
+                "CARAMBOLA",
+                "CUPUACU",
+                "GRAVIOLA",
+                "GOIABA",
+                "JABUTICABA",
+                "JENIPAPO",
+                "MACA",
+                "MANGABA",
+                "MANGA",
+                "MARACUJA",
+                "MURICI",
+                "PEQUI",
+                "PITANGA",
+                "PITAYA",
+                "SAPOTI",
+                "TANGERINA",
+                "UMBU",
+                "UVA",
+                "UVAIA"
+            };
+
+            Random geradorDeNumeros = new Random();
+
+            int indiceEscolhido = geradorDeNumeros.Next(palavras.Length);
+            string palavraEscolhida = palavras[indiceEscolhido];
 
             char[] letrasEncontradas = new char[palavraEscolhida.Length];
 
@@ -19,12 +54,12 @@
 
             do
             {
-                string cabecaDoDesenho = quantidadeErros >= 1 ? " o " : "";
-                string troncoDoDesenho = quantidadeErros >= 2 ? "x" : "" ;
-                string troncoInferiorDoDesenho = quantidadeErros >= 2 ? " x " : "";
-                string bracoEsquerdoDoDesenho = quantidadeErros >= 3 ? "/" : "";
-                string bracoDireitoDoDesenho = quantidadeErros >= 4 ? "\\" : "";
-                string pernasDoDesenho = quantidadeErros >= 5 ? "/" : "";
+                string cabecaDoDesenho = quantidadeErros >= 1 ? " o " : " ";
+                string troncoDoDesenho = quantidadeErros >= 2 ? "x" : " " ;
+                string troncoInferiorDoDesenho = quantidadeErros >= 2 ? " x " : " ";
+                string bracoEsquerdoDoDesenho = quantidadeErros >= 3 ? "/" : " ";
+                string bracoDireitoDoDesenho = quantidadeErros >= 4 ? "\\" : " ";
+                string pernasDoDesenho = quantidadeErros >= 5 ? "/ \\" : " ";
 
                 Console.Clear();
 
@@ -35,8 +70,8 @@
                 Console.WriteLine(" |/        |        ");
                 Console.WriteLine(" |        {0}       ", cabecaDoDesenho);
                 Console.WriteLine(" |        {0}{1}{2} ", bracoEsquerdoDoDesenho, troncoDoDesenho, bracoDireitoDoDesenho);
-                Console.WriteLine(" |        {0}          ", troncoInferiorDoDesenho);
-                Console.WriteLine(" |        {0}         ", pernasDoDesenho);
+                Console.WriteLine(" |        {0}       ", troncoInferiorDoDesenho);
+                Console.WriteLine(" |        {0}       ", pernasDoDesenho);
                 Console.WriteLine(" |                  ");
                 Console.WriteLine(" |                  ");
                 Console.WriteLine("_|____              ");
