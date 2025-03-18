@@ -130,6 +130,14 @@ namespace JogoDaForca.ConsoleApp
             } while (jogadorGanhou != true && jogadorPerdeu != true);
 
         }
+
+        public static int GerarIndice()
+        {
+            Random geradorDeNumeros = new Random();
+            int indiceEscolhido = geradorDeNumeros.Next(palavras.Length);
+            return indiceEscolhido;
+        }
+
     }
 
 }

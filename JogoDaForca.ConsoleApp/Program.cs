@@ -4,8 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Random geradorDeNumeros = new Random();
-            int indiceEscolhido = geradorDeNumeros.Next(28);
+            int indiceEscolhido = Forca.GerarIndice();
 
             string palavraEscolhida = Forca.SelecionarPalavra(indiceEscolhido);
 
